@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm;
+            background-color: #fdfdfd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .tag {
+            background-color: #e74c3c;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.85em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Danh sách Test Case - Online Registration Form</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Dữ liệu nhập</th>
+                <th>Kỹ thuật</th>
+                <th>Kết quả mong đợi</th>
+                <th>Giải thích</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>TC_01</td><td>User: user12, Pass: Passwrd1</td><td>BVA</td><td>Thành công</td><td>Biên dưới Username (6 ký tự)</td></tr>
+            <tr><td>TC_02</td><td>User: user1, Pass: Passwrd1</td><td>BVA</td><td>Thất bại</td><td>Dưới biên dưới Username (5 ký tự)</td></tr>
+            <tr><td>TC_03</td><td>User: user1234567890123456, Pass: Passwrd1</td><td>BVA</td><td>Thành công</td><td>Biên trên Username (20 ký tự)</td></tr>
+            <tr><td>TC_04</td><td>User: user12345678901234567, Pass: Passwrd1</td><td>BVA</td><td>Thất bại</td><td>Trên biên trên Username (21 ký tự)</td></tr>
+            <tr><td>TC_05</td><td>User: user 123, Pass: Passwrd1</td><td>EP</td><td>Thất bại</td><td>Username chứa dấu cách</td></tr>
+            <tr><td>TC_06</td><td>User: user@123, Pass: Passwrd1</td><td>EP</td><td>Thất bại</td><td>Username chứa ký tự đặc biệt</td></tr>
+            <tr><td>TC_07</td><td>User: (Bỏ trống), Pass: Passwrd1</td><td>EP</td><td>Thất bại</td><td>Username bắt buộc</td></tr>
+            <tr><td>TC_08</td><td>User: validUser, Pass: Passwd1</td><td>BVA</td><td>Thất bại</td><td>Dưới biên dưới Password (7 ký tự)</td></tr>
+            <tr><td>TC_09</td><td>User: validUser, Pass: Passwrd1</td><td>BVA</td><td>Thành công</td><td>Biên dưới Password (8 ký tự)</td></tr>
+            <tr><td>TC_10</td><td>User: validUser, Pass: Password12345678</td><td>BVA</td><td>Thành công</td><td>Biên trên Password (16 ký tự)</td></tr>
+            <tr><td>TC_11</td><td>User: validUser, Pass: Password123456789</td><td>BVA</td><td>Thất bại</td><td>Trên biên trên Password (17 ký tự)</td></tr>
+            <tr><td>TC_12</td><td>User: validUser, Pass: PasswordOnly</td><td>EP</td><td>Thất bại</td><td>Password thiếu số</td></tr>
+        </tbody>
+    </table>
+</body>
+</html>
